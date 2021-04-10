@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Other files
+skooldio-cheatsheet-sql-bigquery-2021.pdf
