@@ -44,15 +44,34 @@ LIMIT 5;
 SELECT DISTINCT studio
 FROM movies;
 
-/* */
+/* Select distinct with a combination of fields 
+Below will display unique years that each movie studio 
+has produced */
+SELECT DISTINCT
+    studio,
+    year
+FROM movies;
 
+/* Sorting row results by a column using ORDER BY */
+SELECT *
+FROM movies
+ORDER BY gross;
 
-/* */
+/* Descending order */
+SELECT *
+FROM movies
+ORDER BY gross DESC;
 
-/* */
+/* Sort row results by multiple columns */
+SELECT *
+FROM movies
+ORDER BY
+    year DESC, -- 2020 before 2019
+    studio, -- A to Z 
+    name; -- A to Z
 
-/* */
-
-/* */
-
-/* */
+/* Select top 3 movies by highest gross in descending order */
+SELECT *
+FROM movies
+ORDER BY gross DESC
+LIMIT 3;
