@@ -46,13 +46,45 @@ AND (studio = 'จีทีเอช'
 	OR studio = 'อาร์.เอส.ฟิล์ม'
 )
 
-/* */
-/* */
-/* */
-/* */
-/* */
-/* */
-/* */
-/* */
-/* */
-/* */
+/* Quiz 1 
+display all unique post type values */
+SELECT DISTINCT type
+FROM posts
+
+/* Quiz 2 
+display all posts ordered by # reactions, #comments, # shares
+in ascending order */
+SELECT *
+FROM posts
+ORDER BY
+    reactions,
+    comments,
+    shares
+
+/* Quiz 3 
+display top 10 posts of which type is link that have most #shares */
+SELECT *
+FROM posts
+WHERE type = 'link'
+ORDER BY shares DESC
+LIMIT 10
+
+/* Quiz 4 
+display posts of which type is link and the link contains 
+pattern 'medium.com/skooldio' and #shares less than 30 */
+
+-- solution
+SELECT *
+FROM posts
+WHERE 
+    link LIKE '%medium.com/skooldio%' AND 
+    shares < 30
+
+-- I did. No need to specify type and put ()
+SELECT *
+FROM posts
+WHERE 
+    (type = 'link') AND
+    (link LIKE '%medium.com/skooldio%') AND 
+    shares < 30
+
